@@ -1,0 +1,9 @@
+apply plugin:'war'
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ['src/main/resources','src/main/java']
+        }
+    }
+}

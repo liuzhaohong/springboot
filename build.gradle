@@ -1,0 +1,58 @@
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+    group = 'com.lzh.springboot'
+    version = '1.0'
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+    task allTask << {
+        println project.name
+
+    }
+}
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+    }
+}
+subprojects {
+    apply plugin: 'java'
+    ext {
+        springBootVersion = '1.5.2.RELEASE'
+        dubboVersion='2.5.3'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+//        compile("org.springframework.boot:spring-boot-starter-velocity:1.4.2.RELEASE")
+        compile group: 'org.apache.velocity', name: 'velocity', version:'1.7'
+        compile group: 'org.apache.velocity', name: 'velocity-tools', version: '2.0'
+        compile group: 'org.springframework', name: 'spring-context-support', version:'4.1.4.RELEASE'
+        compile(
+                "com.alibaba:fastjson:1.2.5",
+                compile("com.alibaba:dubbo:$dubboVersion") {
+                    exclude(module: 'commons-logging')
+                    exclude(module: 'spring')
+                },
+                compile("org.apache.zookeeper:zookeeper:3.4.6") {
+                    exclude(module: 'jmxtools')
+                    exclude(module: 'jmxri')
+                    exclude(module: 'jms')
+                    exclude group: "org.slf4j" exclude(module: "log4j")
+                },
+                compile(group: 'com.github.sgroschupf', name: 'zkclient', version: '0.1') { exclude group: "org.slf4j" }
+        )
+        testCompile(
+                "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+        )
+    }
+}
+
+tasks.withType(AbstractCompile){
+    options.encoding='UTF-8'
+}
