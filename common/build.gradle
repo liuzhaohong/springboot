@@ -1,5 +1,5 @@
-apply plugin:'war'
-
+//apply plugin:'war'
+apply plugin: 'org.springframework.boot'
 sourceSets {
     main {
         resources {

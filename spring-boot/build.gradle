@@ -1,1 +1,4 @@
 apply plugin: 'org.springframework.boot'
+dependencies {
+    compile project(":common")
+}
