@@ -1,4 +1,4 @@
-package com.nxin.etpweb;
+package com.liuzh.springboot;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
