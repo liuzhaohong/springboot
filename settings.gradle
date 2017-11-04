@@ -1,5 +1,5 @@
 rootProject.name = 'springboot'
 
 include 'spring-boot'
-include 'common'
+include 'core'
 
