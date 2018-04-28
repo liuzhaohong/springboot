@@ -15,6 +15,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class FactoryTest {
 
+    /**
+     * 工厂模式测试
+     */
     @Test
     public void test() {
         String code = TypeEnum.TYPE_ONE.getCode();
