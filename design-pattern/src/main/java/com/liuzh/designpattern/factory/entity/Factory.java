@@ -14,7 +14,7 @@ public class Factory {
      * @param code
      * @return
      */
-    public FactoryService getService(String code) {
+    public static FactoryService getService(String code) {
         String serviceName = "";
         switch (code) { // jdk7中可以使用string类型
             case "one":

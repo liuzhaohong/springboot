@@ -30,7 +30,7 @@ public class FactoryTest {
         list.add(TypeEnum.TYPE_ONE.getCode());
         list.add(TypeEnum.TYPE_TOW.getCode());
         for (String code : list) {
-            FactoryService factoryService = new Factory().getService(code);
+            FactoryService factoryService = Factory.getService(code);
             String result = factoryService.run();
             log.info(result);
         }
