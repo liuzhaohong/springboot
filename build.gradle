@@ -47,6 +47,7 @@ subprojects {
                 },
                 compile(group: 'com.github.sgroschupf', name: 'zkclient', version: '0.1') { exclude group: "org.slf4j" }
         )
+        compile ('org.projectlombok:lombok:1.16.20')
         testCompile(
                 "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
         )
