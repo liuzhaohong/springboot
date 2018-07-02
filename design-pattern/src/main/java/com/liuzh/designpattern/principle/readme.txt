@@ -1,0 +1,13 @@
+总原则：开闭原则（Open Close Principle）
+开闭原则的意思是：
+    对扩展开放，对修改关闭。
+    在程序需要进行拓展的时候，不能去修改原有的代码，实现一个热插拔的效果。
+    简言之，是为了使程序的扩展性好，易于维护和升级。
+    想要达到这样的效果，我们需要使用接口和抽象类。
+
+1。单一职责原则 （Single Responsibility Principle)
+2。里氏代换原则（Liskov Substitution Principle）
+3。接口隔离原则（Interface Segregation Principle）
+4。依赖倒转原则（Dependence Inversion Principle）
+5。迪米特法则，又称最少知道原则（Demeter Principle）
+6。合成复用原则（Composite Reuse Principle）
